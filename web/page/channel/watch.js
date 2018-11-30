@@ -415,7 +415,8 @@ P = Class.create(P, {
 		video.addEventListener('click', togglePlay);
 
 		//video.load();
-		video.volume = 1;
+		var default_volume = 0.3;
+		video.volume = default_volume;
 
 		// create control view
 
@@ -429,7 +430,7 @@ P = Class.create(P, {
 				'--',
 				{
 					key    : 'vol',
-					element: new flagrate.Slider({ value: 10, max: 10 })
+					element: new flagrate.Slider({ value: default_volume*10, max: 10 })
 				}
 			]
 		}).insertTo(this.view.content);

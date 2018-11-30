@@ -519,7 +519,8 @@ P = Class.create(P, {
 			control.getElementByKey('play').setLabelHTML('&#57459;');
 		};
 
-		video.volume = 1;
+		var default_volume = 0.3;
+		video.volume = default_volume;
 
 		video.play();
 
@@ -559,7 +560,7 @@ P = Class.create(P, {
 				'--',
 				{
 					key    : 'vol',
-					element: new flagrate.Slider({ value: 10, max: 10 })
+					element: new flagrate.Slider({ value: default_volume*10, max: 10 })
 				}
 			]
 		}).insertTo(this.view.content);
