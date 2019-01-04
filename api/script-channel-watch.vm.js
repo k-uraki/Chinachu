@@ -69,8 +69,9 @@ Usushio では使わない
 
 			if (config.vaapiEnabled === true) {
 				args.push("-vaapi_device", config.vaapiDevice || '/dev/dri/renderD128');
-				args.push("-hwaccel", "vaapi");
-				args.push("-hwaccel_output_format", "yuv420p");
+				// 一部のBS/CSチャンネルでハードウェアデコードだと映像乱れるため、ソフトウェアデコードに限定する
+				//args.push("-hwaccel", "vaapi");
+				//args.push("-hwaccel_output_format", "yuv420p");
 			}
 
 			args.push('-re');
